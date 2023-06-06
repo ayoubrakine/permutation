@@ -72,11 +72,14 @@ const Home = () => {
   return (
     <ScrollView>
       <View>
-        <Text style={styles.heading}>Statistiques</Text>
-        <Text style={styles.sectionContainer}>Nombre de professeurs inscrits : {professeursCount}</Text>
-
+        <Text style={styles.head}>-----  Statistiques  -----</Text>
+        
+        <Text style={styles.sectionContainer}>
+    <Text style={styles.blueText}>⊛ Nombre de professeurs inscrits : </Text>
+    <Text style={styles.redText}>{professeursCount}</Text>
+  </Text>
         <View style={styles.sectionContainer}>
-          <Text style={styles.subheading}>Nombre de profs par spécialité </Text>
+          <Text style={styles.text}>⋆ Nombre de profs par spécialité </Text>
           <View style={styles.chartContainer}>
             <PieChart
               data={specialiteData.slice(0, 15)}
@@ -91,7 +94,7 @@ const Home = () => {
         </View>
 
         <View style={styles.sectionContainer}>
-          <Text style={styles.subheading}>Villes les plus demandées </Text>
+          <Text style={styles.text}>⋆ Villes les plus demandées </Text>
           <View style={styles.chartContainer}>
             <PieChart
               data={villeDesireeData.slice(0, 15)}
@@ -106,7 +109,7 @@ const Home = () => {
         </View>
 
         <View style={styles.sectionContainer}>
-          <Text style={styles.subheading}>Nombre de profs par grade </Text>
+          <Text style={styles.text}>⋆ Nombre de profs par grade </Text>
           <View style={styles.chartContainer}>
             <PieChart
               data={gradeData}
@@ -124,7 +127,7 @@ const Home = () => {
 
 
         <View style={styles.sectionContainer}>
-          <Text style={styles.subheading}>Nombre de profs par spécialité (Top 15)</Text>
+          <Text style={styles.text}>⋆ Nombre de profs par spécialité (Top 15)</Text>
           <View style={styles.specialiteContainer}>
             <View style={styles.specialiteRow}>
               <Text style={styles.specialiteHeading}>Spécialité</Text>
@@ -140,7 +143,7 @@ const Home = () => {
         </View>
 
         <View style={styles.sectionContainer}>
-          <Text style={styles.subheading}>Villes les plus demandées (Top 15)</Text>
+          <Text style={styles.text}>⋆ Villes les plus demandées (Top 15)</Text>
           <View style={styles.villeDesireeContainer}>
             <View style={styles.villeDesireeRow}>
               <Text style={styles.villeDesireeHeading}>Ville</Text>
@@ -156,7 +159,7 @@ const Home = () => {
         </View>
 
         <View style={styles.sectionContainer}>
-          <Text style={styles.subheading}>Nombre de profs par grade</Text>
+          <Text style={styles.text}>⋆ Nombre de profs par grade</Text>
           <View style={styles.gradeContainer}>
             <View style={styles.gradeRow}>
               <Text style={styles.gradeHeading}>Grade</Text>
@@ -189,12 +192,53 @@ const chartColors = {
 };
 
 const styles = StyleSheet.create({
+  sectionContainer: {
+    borderWidth: 1,
+    borderColor: 'gray',
+    borderRadius: 5,
+    padding: 10,
+    marginTop: 10,
+    width: 370,
+    alignSelf: 'center',
+    flexDirection: 'row', // Ajout de la propriété flexDirection avec la valeur 'row'
+    alignItems: 'center', // Aligner les éléments verticalement au centre
+    justifyContent: 'center', // Centrer les éléments horizontalement
+  },
+  blueText: {
+    color: 'blue',
+    fontWeight: 'bold',
+    fontSize:15,
+  },
+  redText: {
+    color: 'red',
+    fontWeight: 'bold',
+    fontSize:17,
+  },
+
+
+  head: {
+    fontSize: 24,
+    marginBottom:30,
+    fontWeight: 'bold',
+    marginTop: 20,
+    textAlign: 'center',
+    color: 'blue', // Ajout de la propriété color avec la valeur "blue"
+   
+  },
+  text:{
+    //color:'blue',
+    fontWeight: 'bold',
+    fontSize: 18,
+    marginBottom: 10,
+
+},
+
   heading: {
     fontSize: 24,
     fontWeight: 'bold',
     marginTop: 20,
     textAlign: 'center',
-
+    color: 'blue', // Ajout de la propriété color avec la valeur "blue"
   },
   sectionContainer: {
     borderWidth: 1,
@@ -205,12 +249,15 @@ const styles = StyleSheet.create({
     width: 370,
     alignSelf: 'center',
     fontWeight: 'bold',
+    
+    
   },
   subheading: {
     fontSize: 18,
-    fontWeight: 'bold',
     marginBottom: 10,
+    fontWeight: 'bold',
     textAlign: 'center',
+    
   },
   chartContainer: {
     alignItems: 'center',
@@ -257,6 +304,7 @@ const styles = StyleSheet.create({
     flex: 1,
     textAlign: 'center',
     marginBottom: 5,
+    color:'blue',
   },
   specialiteText: {
     flex: 1,
@@ -269,6 +317,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginBottom: 5,
+    color:'blue',
   },
   villeDesireeHeading: {
     fontWeight: 'bold',
@@ -276,6 +325,7 @@ const styles = StyleSheet.create({
     flex: 1,
     textAlign: 'center',
     marginBottom: 5,
+    color:'blue',
   },
   villeDesireeText: {
     flex: 1,
@@ -295,6 +345,7 @@ const styles = StyleSheet.create({
     flex: 1,
     textAlign: 'center',
     marginBottom: 5,
+    color:'blue',
   },
   gradeText: {
     flex: 1,
@@ -303,3 +354,5 @@ const styles = StyleSheet.create({
 });
 
 export default Home;
+
+

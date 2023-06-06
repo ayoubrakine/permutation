@@ -254,6 +254,7 @@ const styles = {
     height: 100,
     alignItems: 'center',
     marginLeft:120,
+    marginBottom:15,
     
 
     
@@ -262,7 +263,7 @@ const styles = {
   title: {
 
     fontSize: 25,
-    color: 'red',
+    color: 'black',
     fontWeight: 'bold',
 
   },
